@@ -1,0 +1,23 @@
+name: Release Binary
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    name: Release Binary
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Docker Image
+      run: docker build -t builder .
+    - name: Build Firmware
+      run: docker run --name builder -t builder sh -c "mkdir -p build && cd build && cmake .. && make"
+    - name: Copy Binary
+      run: docker cp builder:/app/build/unz-hid-pico.uf2 unz-hid-pico.uf2
+    - name: Upload Binary
+      uses: softprops/action-gh-release@v1
+      with:
+        files: unz-hid-pico.uf2
