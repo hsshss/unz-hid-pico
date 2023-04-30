@@ -26,6 +26,8 @@ static void hid_app_init_mouse() {
     gpio_set_dir(MOUSE_DATA_PIN_BASE + i, GPIO_OUT);
   }
 
+  gpio_put_masked(0xf << MOUSE_DATA_PIN_BASE, 0xf << MOUSE_DATA_PIN_BASE);
+
   gpio_init(MOUSE_TRIG1_PIN);
   gpio_set_dir(MOUSE_TRIG1_PIN, GPIO_OUT);
 
