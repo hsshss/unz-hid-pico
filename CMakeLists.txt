@@ -9,8 +9,10 @@ pico_sdk_init()
 add_executable(unz-hid-pico)
 
 target_sources(unz-hid-pico PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}/src/gamepad.c
         ${CMAKE_CURRENT_LIST_DIR}/src/hid_app.c
         ${CMAKE_CURRENT_LIST_DIR}/src/main.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/mouse.c
         )
 
 target_include_directories(unz-hid-pico PUBLIC

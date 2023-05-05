@@ -2,6 +2,10 @@
 
 This project is an adapter to use USB HID with FM TOWNS / MSX using Raspberry Pi Pico.
 
+# Limitation
+
+Gamepad support currently only for PS4 / PS5 controllers.
+
 # Hardware
 
 https://oshwlab.com/hsshss/unz-hid-pico
