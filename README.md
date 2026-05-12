@@ -4,15 +4,16 @@ This project is an adapter to use USB HID with FM TOWNS / MSX using Raspberry Pi
 
 # Limitation
 
-Gamepad support currently only for PS4 / PS5 controllers.
+Gamepad support is currently only available for PS4/PS5 controllers.
 
 # Hardware
 
-https://oshwlab.com/hsshss/unz-hid-pico
+![Schematic](hardware/schematic.png)
 
 ### Notes
 
-USB devices should be connected to the Raspberry Pi Pico using an OTG cable.
+- USB devices should be connected to the Raspberry Pi Pico using an OTG cable.
+- Transistor array IC can be replaced by discrete transistors and resistors.
 
 # Building
 
@@ -26,6 +27,6 @@ docker run --rm -v ${PWD}:/app -t unz-hid-pico-builder sh -c "mkdir -p build && 
 # Flashing
 
 1. Disconnect all connectors
-2. While holding down the BOOTSEL button and connect to PC with USB cable
+2. While holding down the BOOTSEL button, connect to a PC with a USB cable
 3. A USB Mass Storage Device named `RPI-RP2` will be mounted
-4. Drag and drop `unz-hid-pico.uf2` file to the `RPI-RP2`
+4. Drag and drop the `unz-hid-pico.uf2` file onto `RPI-RP2`
